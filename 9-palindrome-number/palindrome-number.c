@@ -5,24 +5,12 @@ bool isPalindrome(int x) {
 
     int original = x;
     long rev = 0;
-    int i;
-    int c = 0;
-    int temp = x;
 
-    while (temp != 0) {
-        temp = temp / 10;
-        c++;
-    }
-
-    for (i = 0; i < c; i++) {
+    while (x != 0) {
         int digit = x % 10;
         rev = rev * 10 + digit;
         x = x / 10;
     }
 
-    if (original == rev) {
-        return true;
-    } else {
-        return false;
-    }
+    return original == rev;
 }
